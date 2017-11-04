@@ -18,6 +18,13 @@ public class HelloWorld {
 		
 		new Wish ("Good Morning");
 
+		//change A
+		//Change B
+		
+		//change X
+		//change Y
+		
+		//Change local Slave
 	}
 
 }
