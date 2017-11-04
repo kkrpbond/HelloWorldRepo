@@ -6,6 +6,7 @@ public class HelloWorld {
 		
 		System.out.println("Welcome to the Hello World Tutorial");
 		System.out.println("----- *** -----");
+		System.out.println("Hello from Developer 2");
 
 	}
 
