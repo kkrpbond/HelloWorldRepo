@@ -23,6 +23,8 @@ public class HelloWorld {
 		
 		//change X
 		//change Y
+		
+		//Change local Slave
 	}
 
 }
