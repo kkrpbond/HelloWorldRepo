@@ -17,6 +17,7 @@ public class HelloWorld {
 		
 		
 		new Wish ("Good Morning");
+		//Change B
 
 	}
 
