@@ -1,0 +1,65 @@
+#log4j.debug
+#log4j.threshold = DEBUG
+
+#Root logger option
+log4j.rootLogger = DEBUG, file, Console, HTML, EMAIL
+
+log4j.logger.com.learning.logfourj.LogCourse = DEBUG
+log4j.logger.com.learning.logfourj.LogCourse1 = INFO
+
+#Direct log messages to Console
+log4j.appender.Console.threshold = WARN
+log4j.appender.Console = org.apache.log4j.ConsoleAppender
+log4j.appender.Console.Target = System.out
+log4j.appender.Console.layout = org.apache.log4j.PatternLayout
+#log4j.appender.Console.layout.ConversionPattern = %d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} :%L - %m%n
+log4j.appender.Console.layout.ConversionPattern = [%d] [%-5p] [%t] %c %x :%L - %m%n
+
+#Direct log messages to a log file
+log4j.appender.file.threshold = INFO
+log4j.appender.file = org.apache.log4j.RollingFileAppender
+log4j.appender.file.File = /Users/krrisshmacpro/eclipse-workspace/ApplicationLogs/logging.log
+#Redirect to Tomcat logs folder
+#log4j.appender.file.File = ${catalina.home}/logs/logging.log
+log4j.appender.file.MaxFileSize = 500KB
+log4j.appender.file.MaxBackupIndex = 6
+log4j.appender.file.layout = org.apache.log4j.PatternLayout
+#log4j.appender.file.layout.ConversionPattern = %d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} :%L - %m%n
+log4j.appender.file.layout.ConversionPattern = [%d] [%-5p] [%t] %c %x :%L - %m%n
+
+#Direct log messages to HTML page
+log4j.appender.HTML.threshold = ERROR
+log4j.appender.HTML = org.apache.log4j.RollingFileAppender
+log4j.appender.HTML.File = /Users/krrisshmacpro/eclipse-workspace/ApplicationLogs/logging.html
+log4j.appender.HTML.MaxFileSize = 10KB
+log4j.appender.HTML.MaxBackupIndex = 6
+log4j.appender.HTML.layout = org.apache.log4j.HTMLLayout
+log4j.appender.HTMLlayout.ConversionPattern = [%d] [%-5p] [%t] %c %x :%L - %m%n
+
+#Direct log messages to Email
+#log4j.appender.EMAIL.SMTPDebug=true
+log4j.appender.EMAIL.threshold = FATAL
+log4j.appender.EMAIL = com.learning.logfourj.GmailSmtpAppend.GmailSMTPAppender
+log4j.appender.EMAIL.SMTPHost = smtp.gmail.com
+log4j.appender.EMAIL.SMTPPort = 465
+log4j.appender.EMAIL.SMTPUsername=joseph.reddy3399@gmail.com
+log4j.appender.EMAIL.SMTPPassword=reddy1234
+log4j.appender.EMAIL.Subject = Application Fatal Notification - LogCourse
+log4j.appender.EMAIL.From=joseph.reddy3399@gmail.com
+log4j.appender.EMAIL.To=krrissh2006@gmail.com
+#log4j.appender.EMAIL.cc=cc@gmail.com
+log4j.appender.EMAIL.layout=org.apache.log4j.PatternLayout
+log4j.appender.EMAIL.layout.ConversionPattern = [%d] [%t] %-5p %c %x - %m%n
+log4j.appender.EMAIL.BufferSize=1
+log4j.appender.EMAIL.smtp.starttls.enable=true
+
+#Direct log messages to Oracle Database
+#log4j.appender.JDBCAppend.threshold = ERROR
+l#og4j.appender.JDBCAppend = org.apache.log4j.jdbc.JDBCAppender
+#log4j.appender.JDBCAppend.URL = jdbc:oracle:thin:@sd1.hbs.edu:1521:sc1
+#log4j.appender.JDBCAppend.Driver = oracle.jdbc.driver.OracleDriver
+#log4j.appender.JDBCAppend.User = DBUser
+#log4j.appender.JDBCAppend.Password = DBPwd
+#log4j.appender.JDBCAppend.layout=org.apache.log4j.PatternLayout
+#log4j.appender.JDBCAppend.layout.ConversionPattern = INSERT INTO LOGGING_SAMPLES_TEST (log_date, log_level, location, message) VALUES ( '%d{ISO8601}','%p', '%C;%L', '%m' )
+#
